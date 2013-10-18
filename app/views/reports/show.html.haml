@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @report.name
+%p
+  %b Content:
+  = @report.content
+%p
+  %b Image:
+  = @report.image
+
+= link_to 'Edit', edit_report_path(@report)
+\|
+= link_to 'Back', reports_path

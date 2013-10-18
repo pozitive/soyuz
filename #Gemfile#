@@ -36,9 +36,12 @@ group :doc do
 end
 
 # 
-gem "haml-rails"
 gem 'compass-rails', github: "Compass/compass-rails"
 gem "zurb-foundation"
+
+# Haml
+gem "haml-rails"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
