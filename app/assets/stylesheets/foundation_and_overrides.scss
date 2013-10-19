@@ -149,9 +149,9 @@ $default-float: left;
 // Grid Variables
 //
 
-// $row-width: em-calc(1000);
-// $column-gutter: em-calc(30);
-// $total-columns: 12;
+$row-width: em-calc(1000);
+$column-gutter: em-calc(30);
+$total-columns: 12;
 
 //
 // Block Grid Variables
@@ -159,12 +159,12 @@ $default-float: left;
 
 // We use this to control the maximum number of block grid elements per row
 
-// $block-grid-elements: 12;
-// $block-grid-default-spacing: em-calc(20);
+$block-grid-elements: 12;
+$block-grid-default-spacing: em-calc(20);
 
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
 
-// $block-grid-media-queries: true;
+$block-grid-media-queries: true;
 
 //
 // Typography Variables
@@ -1255,12 +1255,12 @@ $default-float: left;
 
 // Background color for the top bar
 
-// $topbar-bg-color: #111;
+$topbar-bg-color: #ededed;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 
-// $topbar-height: 45px;
+$topbar-height: 85px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
@@ -1283,13 +1283,13 @@ $default-float: left;
 
 // Set the link colors and styles for top-level nav
 
-// $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
+$topbar-link-color: #222;
+$topbar-link-color-hover: #222;
+$topbar-link-color-active: #222;
 // $topbar-link-weight: bold;
-// $topbar-link-font-size: em-calc(13);
-// $topbar-link-hover-lightness: -30%; // Darken by 30%
-// $topbar-link-bg-hover: darken($topbar-bg-color, 3%);
+$topbar-link-font-size: em-calc(15);
+$topbar-link-hover-lightness: -30%; // Darken by 30%
+$topbar-link-bg-hover: darken($topbar-bg-color, 3%);
 // $topbar-link-bg-active: darken($topbar-bg-color, 3%);
 
 // $topbar-dropdown-label-color: #555;
@@ -1316,12 +1316,19 @@ $default-float: left;
 
 // Divider Styles
 
-// $topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
-//  $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
+$topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
+$topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
 
 // Sticky Class
 
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+
+
+.social {
+   a {
+      font-size: em-calc(50);
+   }
+}
 
 @import 'foundation';

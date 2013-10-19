@@ -1,11 +1,10 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h1
   = @article.name
+%hr
 %p
-  %b Content:
-  = @article.content
+  = @article.content.html_safe if @article.content.present?
 
 = link_to 'Edit', edit_article_path(@article)
 \|

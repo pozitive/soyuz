@@ -35,10 +35,17 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# 
+# Haml (HTML Abstraction Markup Language)
 gem "haml-rails"
+
+# Compass
 gem 'compass-rails', github: "Compass/compass-rails"
+
+# Foundation
 gem "zurb-foundation"
+
+gem 'foundation-icons-sass-rails'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

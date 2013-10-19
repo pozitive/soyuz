@@ -1,2 +1,20 @@
-.navbar
-  Navbar
+%nav{class: "top-bar"}
+  %ul{class: "title-area"}
+    %li{class: "name"}= link_to image_tag("logo.png", :height => '80', :width => '145'), root_path
+    %li{class: "toggle-topbar menu-icon"}
+      %a{href: "#"}
+        %span Menu
+  %section{class: "top-bar-section"}
+    %ul{class: "right"}
+      %li{class: "divider"}
+      %li= link_to "Главная", root_path
+      %li{class: "divider"}
+      %li= link_to "О компании", article_path(Article.find_by(name: "О компании").id)
+      %li{class: "divider"}
+      %li= link_to "Услуги", article_path(Article.find_by(name: "Услуги").id)
+      %li{class: "divider"}
+      %li= link_to "Расценки", article_path(Article.find_by(name: "Расценки").id)
+      %li{class: "divider"}
+      %li= link_to "Информация", article_path(Article.find_by(name: "Информация").id)
+      %li{class: "divider"}
+      %li= link_to "Контакты", article_path(Article.find_by(name: "Контакты").id)

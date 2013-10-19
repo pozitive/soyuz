@@ -28,7 +28,13 @@
       
       <%= render "layouts/slide" %>
 
-      <%= yield %>
+      <section id="mainContent">
+        <div class="row">
+          <div class="large-12 columns">
+            <%= yield %>
+          </div>
+        </div>
+      </section>
 
       <%= render "layouts/news" %>
 

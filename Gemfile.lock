@@ -49,6 +49,9 @@ GEM
       sass (~> 3.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    foundation-icons-sass-rails (2.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     fssm (0.2.10)
     haml (4.0.3)
       tilt
@@ -132,6 +135,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails!
+  foundation-icons-sass-rails
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails

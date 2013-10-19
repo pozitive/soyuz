@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+ *= require_tree .
+ */
+@import 'foundation-icons';
+
+.top-bar {
+   section {
+   }
+}
+header#homepage {
+   background-color: #13A7C7;
+   background-position: center bottom;
+   background-repeat: no-repeat;
+   padding: 450px 0 220px 0;
+}
+header#homepage.homeslide {
+   background-image: image-url("map.png");
+}
+.my { @extend .hide-for-small; }
+.my {
+
+}
+@media only screen and (max-width: 767px) {
+   header#homepage {
+      background-size: auto 150px;
+      padding-bottom: 110px;
+      padding-top: 40px;
+   }
+}
+
+#mainContent {
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 22px;
+    margin-top: 44px;
+    overflow: hidden;
+    padding-bottom: 44px;
+}
+
+footer {
+   ul {
+      list-style: none;
+      li {
+      list-style: none;
+      }
+   }
+}
+.social {
+   list-style: none;
+   display: block;
+   float: right;
+   margin: 0;
+   padding: 0;
+   li {
+      list-style: none;
+      display: block;
+      float: right;
+      margin: 0 10px;
+      padding: 0;
+   }
+   a {
+      line-height: 1;
+   }
+}
