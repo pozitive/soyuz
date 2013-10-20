@@ -14,12 +14,19 @@
  */
 @import 'foundation-icons';
 
+/* Pattern color */
+$pcolor-1: #DFECEB;
+$pcolor-2: #609F9D;
+$pcolor-3: #c5c4ca;
+$pcolor-4: #C9CAC4;
+$pcolor-5: #000000;
+
 .top-bar {
    section {
    }
 }
 header#homepage {
-   background-color: #13A7C7;
+   background-color: $pcolor-2 ;
    background-position: center bottom;
    background-repeat: no-repeat;
    padding: 450px 0 220px 0;
@@ -40,11 +47,10 @@ header#homepage.homeslide {
 }
 
 #mainContent {
+    background-color: #EFF5F5;
     border-bottom: 1px solid #EEEEEE;
-    margin-bottom: 22px;
-    margin-top: 44px;
+    padding: 44px 0 44px 0;
     overflow: hidden;
-    padding-bottom: 44px;
 }
 
 footer {
