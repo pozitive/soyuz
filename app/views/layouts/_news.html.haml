@@ -1,2 +1,9 @@
-.news
-  News
+%section{id: "news"}
+  %div{class: "row"}
+    - Report.first(3).each do |report|
+      %div{class: "large-4 columns"}
+        %h3
+          = link_to (image_tag report.image),  report_path(report.id)
+        %h3
+          = link_to truncate(report.name, length: 30), report_path(report.id)
+        = truncate_html report.content, length: 300

@@ -1,10 +1,24 @@
 // My variables
 /* Pattern color */
-$pcolor-1: #DFECEB;
-$pcolor-2: #609F9D;
-$pcolor-3: #c5c4ca;
-$pcolor-4: #C9CAC4;
-$pcolor-5: #000000;
+$pcolor-1: #424242;
+$topbar-link-color: #E9E9E9;
+$topbar-link-color-hover: #E9E9E9;
+$topbar-link-color-active: #E9E9E9;
+$pcolor-2: #3299BB;
+$pcolor-3: #E9E9E9;
+$body-font-color: #424242;
+$body-font-family: 'PT Sans', sans-serif;
+$header-font-family: 'PT Serif', serif;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-weight: normal;
+// $body-font-style: normal;
+$pcolor-4: #FF9900;
+$news-color: #1D2830;
+$news-link-color: #1D4561;
+$news-linkh-color: #282884;
+
+$pcolor-5: #BCBCBC;
+$footer-color: #2BA6CB;
 
 //
 // Foundation Variables
@@ -244,12 +258,12 @@ $block-grid-media-queries: true;
 
 // Style lists
 
-// $list-style-position: outside;
-// $list-side-margin: 0;
-// $list-nested-margin: em-calc(20);
-// $definition-list-header-weight: bold;
-// $definition-list-header-margin-bottom: .3em;
-// $definition-list-margin-bottom: em-calc(12);
+$list-style-position: outside;
+$list-side-margin: 0;
+$list-nested-margin: em-calc(20);
+$definition-list-header-weight: bold;
+$definition-list-header-margin-bottom: .3em;
+$definition-list-margin-bottom: em-calc(12);
 
 // Style blockquotes
 
@@ -1268,7 +1282,7 @@ $topbar-bg-color: $pcolor-1;
 
 // Height and margin
 
-$topbar-height: 85px;
+$topbar-height: 120px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
@@ -1291,9 +1305,9 @@ $topbar-height: 85px;
 
 // Set the link colors and styles for top-level nav
 
-$topbar-link-color: #222;
-$topbar-link-color-hover: #222;
-$topbar-link-color-active: #222;
+// $topbar-link-color: #222;
+// $topbar-link-color-hover: #222;
+// $topbar-link-color-active: #222;
 // $topbar-link-weight: bold;
 $topbar-link-font-size: em-calc(15);
 $topbar-link-hover-lightness: -30%; // Darken by 30%
@@ -1333,10 +1347,91 @@ $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 
+// My style
+
+.top-bar {
+   .title-area {
+      img {
+         padding: 10px;
+      }
+   }
+}
+header#homepage {
+   background-color: $pcolor-2 ;
+   background-position: center bottom;
+   background-repeat: no-repeat;
+   padding: 450px 0 220px 0;
+}
+header#homepage.homeslide {
+   background-image: image-url("map.png");
+}
+.my { @extend .hide-for-small; }
+.my {
+
+}
+@media only screen and (max-width: 767px) {
+   header#homepage {
+      background-size: auto 150px;
+      padding-bottom: 110px;
+      padding-top: 40px;
+   }
+}
+
+#mainContent {
+    background-color: $pcolor-3;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 44px 0 44px 0;
+    overflow: hidden;
+}
+
+footer {
+   ul {
+      list-style: none;
+      li {
+      list-style: none;
+      }
+   }
+}
 .social {
+   list-style: none;
+   display: block;
+   float: right;
+   margin: 0;
+   padding: 0;
+   li {
+      list-style: none;
+      display: block;
+      float: right;
+      margin: 0 10px;
+      padding: 0;
+   }
    a {
+      line-height: 1;
       font-size: em-calc(50);
    }
 }
+
+#news {
+   padding: em-calc(100px 0px 100px 0px);
+   background-color: $pcolor-4;
+   color: $news-color;
+   h3 {
+      color: $news-color;
+   }
+   a {
+      color: $news-link-color;
+   }
+   a:hover {
+      color: $news-linkh-color;
+   }
+}
+footer {
+   padding: em-calc(100px 0px 100px 0px);
+   background-color: $pcolor-5;
+   color: $footer-color;
+   font-weight: bold;
+}
+
+
 
 @import 'foundation';

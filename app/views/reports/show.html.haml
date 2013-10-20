@@ -1,14 +1,14 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h1
   = @report.name
+%hr
 %p
-  %b Content:
-  = @report.content
-%p
-  %b Image:
-  = @report.image
+  = image_tag @report.image
+
+= @report.content.html_safe if @report.content.present?
+
+
 
 = link_to 'Edit', edit_report_path(@report)
 \|
