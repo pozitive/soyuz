@@ -77,4 +77,8 @@ Soyuz::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # https://github.com/ejholmes/active_admin_editor#heroku
+  config.initialize_on_precompile = true
+
 end
