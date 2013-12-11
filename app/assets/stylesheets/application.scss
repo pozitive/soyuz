@@ -9,10 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
- *= require_tree .
  */
-@import 'foundation-icons';
 
-/* Pattern color */
+@import "foundation_and_overrides"; /* Add imports of custom sass/scss files here */
 

@@ -1,20 +1,21 @@
-%nav{class: "top-bar"}
-  %ul{class: "title-area"}
-    %li{class: "name"}= link_to image_tag("logo.png"), root_path
-    %li{class: "toggle-topbar menu-icon"}
-      %a{href: "#"}
-        %span Menu
-  %section{class: "top-bar-section"}
-    %ul{class: "right"}
-      %li{class: "divider"}
-      %li= link_to "Главная", root_path
-      %li{class: "divider"}
-      %li= link_to "О компании", article_path(Article.find_by(name: "О компании").id)
-      %li{class: "divider"}
-      %li= link_to "Услуги", article_path(Article.find_by(name: "Услуги").id)
-      %li{class: "divider"}
-      %li= link_to "Расценки", article_path(Article.find_by(name: "Расценки").id)
-      %li{class: "divider"}
-      %li= link_to "Информация", article_path(Article.find_by(name: "Информация").id)
-      %li{class: "divider"}
-      %li= link_to "Контакты", article_path(Article.find_by(name: "Контакты").id)
+%header.main
+  .row
+    %nav.top-bar{data: {topbar: "", options: "is_hover: false"}}
+      %ul.title-area
+        %li.name
+          %h1#logo
+            = link_to image_tag("logo.png"), root_path
+        %li.toggle-topbar.menu-icon
+          %a{href: "#"}
+            %span Menu
+      %section{class: "top-bar-section"}
+        %ul{class: "right"}
+          - Article.order(weight: :asc).roots.each do |article|
+            - if article.children.present?
+              %li{class: "has-dropdown"}
+                = link_to article.name, "#", class: "has-dropdown"
+                %ul{class: "dropdown"}
+                  - article.children.order(weight: :asc).each do |children|
+                    %li= link_to children.name, children
+            - else
+              %li= link_to article.name, article

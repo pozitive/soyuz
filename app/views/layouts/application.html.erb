@@ -14,8 +14,6 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <%= favicon_link_tag %>
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif:400,700' rel='stylesheet' type='text/css'>
-
   	<title><%= content_for?(:title) ? yield(:title) : "SOYUZ  Oriental  International Logistic Company " %></title>
 
   	<%= stylesheet_link_tag    "application" %>
@@ -27,23 +25,19 @@
 
     <%= render "layouts/navbar" %>
 
-    <section role="main">
-      
-      <%= render "layouts/slide" %>
+    <%= yield :splash %>
 
-      <section id="mainContent">
-        <div class="row">
-          <div class="large-12 columns">
-            <%= yield %>
-          </div>
+    <section role="main" class="content">
+      <div class="row">
+        <div class="large-12 columns">
+          <%= yield %>
         </div>
-      </section>
-
-      <%= render "layouts/news" %>
-
-      <%= render "layouts/footer" %>
-      
-      <%= javascript_include_tag "application" %>
+      </div>
     </section>
+
+    <%= render "layouts/footer" %>
+      
+    <%= javascript_include_tag "application" %>
+
   </body>
 </html>

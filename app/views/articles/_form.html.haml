@@ -12,5 +12,11 @@
   .field
     = f.label :content
     = f.text_area :content
+  .field
+    = f.label :weight
+    = f.text_area :weight
+  .field
+    = f.label :parent_id
+    = f.collection_select :parent_id, Article.order(:name), :id, :name, include_blank: true
   .actions
     = f.submit 'Save'
