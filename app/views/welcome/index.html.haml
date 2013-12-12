@@ -18,8 +18,7 @@
             &nbsp;
           .large-2.columns
             %h5
-              %a
-                Подробнее >
+              = link_to "Подробнее >", Article.find_by_name("Международные автомобильные грузоперевозки") || root_path
     %dd
       %a{id: "delivery-air", href: "#panel2"}
         .row
@@ -38,8 +37,7 @@
             &nbsp;
           .large-2.columns
             %h5
-              %a
-                Подробнее >
+              = link_to "Подробнее >", Article.find_by_name("Авиаперевозки грузов") || root_path
     %dd
       %a{id: "delivery-rail", href: "#panel3"}
         .row
@@ -58,13 +56,12 @@
             &nbsp;
           .large-2.columns
             %h5
-              %a
-                Подробнее >
+              = link_to "Подробнее >", Article.find_by_name("Перевозки грузов железнодорожным транспортом") || root_path
     %dd
       %a{id: "delivery-ocean", href: "#panel4"}
         .row
           .large12.columns
-            Контейнерные морские перевозки        
+            Контейнерные морские перевозки
       #panel4.content
         .row
           .large-3.columns
@@ -78,5 +75,4 @@
             &nbsp;
           .large-2.columns
             %h5
-              %a
-                Подробнее >
+              = link_to "Подробнее >", Article.find_by_name("Контейнерные морские перевозки") || root_path
