@@ -1,44 +1,32 @@
-@function remCalc($pxWidth) {
-  @return $pxWidth / $em-base * 1rem;
-}
 // My variables
 // Default body styles
 $body-bg: #2F2C2D;
-$second-body-bg: #232121;
-$body-font-color: #FFF;
+$second-body-bg: #1D1B1C;
+$body-font-color: #B8AE9D;
 $header-font-color: #FFF;
-
+$anchor-font-color: $header-font-color;
+$anchor-font-color-hover: darken($header-font-color, 50%);
 // Top bar
-$topbar-bg: #2F2C2D;;
-@media only screen and (min-width: 40.00em) { 
-   nav.top-bar {
-      margin: 66px 0 ;
-   }
-   #logo {
-      margin-top: -20px;
-      a {
-         padding:0;
-      }
-   }
-}
+$topbar-bg: #2F2C2D;
 // Header
 header.main {
-
 }
-
-
 // Content
 .content {
    padding: 0 0 50px 0;
-   background: $second-body-bg;
+   background: #232121;
+   .row {
+      background: $second-body-bg;
+   }
+   h1, h2, h3 {
+      color: #F8EAD3;
+   }
 }
 .welcome {
    .content {
       padding: 0;
    }
 }
-   
-
 // Footer
 footer.main {
    padding: 20px 0;
@@ -47,7 +35,6 @@ footer.main {
       color: #F8EAD3;
    }
    h5 {
-
       color: #F8EAD3;
       font: italic 300 18px/1.2em 'Open Sans',sans-serif;
       text-shadow: 1px 1px #000000;
@@ -56,88 +43,33 @@ footer.main {
       border-color: #333132;
    }
 }
-
 // Welcome
-.splash {
-   height: 130px;
-   h3 {
-      padding-top: 30px;
-   }
-   a, a:hover {
-      color: #fff;
-   }
-   .invisible {
-      
-   }
-   .text {
-      height: 240px;
-      background: $second-body-bg;
-   }
-}
-.bg {
-   height: 130px;
-   .row {
-      vertical-align: baseline;
-   }
-}
-
-$deliveries: car air rail ocean;
-
-// @each $delivery in $deliveries {
-//   .delivery-#{$delivery} {
-//      background: image-url("splash-#{$delivery}.jpg") no-repeat center;
-//   }
-// }
-
 #delivery-car {
    background: #025A41 image-url("splash-car.jpg") no-repeat top center;
-   opacity: 0.8;
-   &:hover, &:active {
-      opacity: 1;
-   }
 }
 #delivery-air {
    background: #8A3705 image-url("splash-air.jpg") no-repeat center;
-   opacity: 0.8;
-   &:hover, &:active {
-      opacity: 1;
-   }
 }
 #delivery-rail {
    background: #572121 image-url("splash-rail.jpg") no-repeat center;
-   opacity: 0.8;
-   &:hover, &:active {
-      opacity: 1;
-   }
 }
 #delivery-ocean {
    background: #007AA7 image-url("splash-ocean.jpg") no-repeat center;
-   opacity: 0.8;
-   &:hover, &:active {
-      opacity: 1;
-   }
 }
 dl.accordion {
+   .content.active {
+      background: $second-body-bg;
+   }
+   dd {
+      opacity: 0.8;
+      &:hover, &:active {
+         opacity: 1;
+      }
+   }
    dd a {
       max-height: 130px;
    }
-   dd h3 {
-      padding: 50px 0;
-   }
-   dd p {
-      margin: 10px 0;
-   }
-   .border {
-      border-right: 1px solid #282929;
-   }
-   dd h5 {
-      padding: 70px 0;
-   }
-   a {
-      color: #fff;
-   }
 }
-
 
 $accordion-content-active-bg-color: #232121;
 $accordion-navigation-padding: 52px 0; 
@@ -145,16 +77,46 @@ $accordion-navigation-bg-color: #efefef;
 $accordion-navigation-font-color: #fff;
 $accordion-navigation-font-size: 25px;
 @import 'foundation';
-
-  
-
-
 $accordion-navigation-hover-bg-color: darken($accordion-navigation-bg-color, 5%);
 $accordion-navigation-active-bg-color: darken($accordion-navigation-bg-color, 3%);
-
-
 $accordion-navigation-font-family: $body-font-family;
-
 $accordion-content-padding: $column-gutter/2;
 
-
+@media #{$small-up} { 
+   #logo {
+      img {
+         display: none;
+      }
+   }
+}
+@media #{$large-up} {
+   nav.top-bar {
+      margin: 66px 0 ;
+   }
+   #logo {
+      margin-top: -20px;
+      .mobile {
+         display: none;
+      }
+      img {
+         display: block;
+      }
+      a {
+         padding:0;
+      }
+   }
+   dl.accordion {
+      dd h3 {
+         padding: 50px 0;
+      }
+      dd p {
+         margin: 10px 0;
+      }
+      .border {
+         border-right: 1px solid #282929;
+      }
+      dd h5 {
+         padding: 70px 0;
+      }
+   }
+}
