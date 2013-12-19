@@ -1,5 +1,13 @@
 // My variables
 // Default body styles
+@import "foundation/functions";
+$rem-base: 16px;
+$topbar-title-font-size: rem-calc(17);
+$topbar-link-font-size: rem-calc(17);
+$topbar-dropdown-label-font-size: rem-calc(15);
+$topbar-menu-link-font-size: rem-calc(15);
+
+
 $body-bg: #2F2C2D;
 $second-body-bg: #1D1B1C;
 $body-font-color: #B8AE9D;
@@ -36,7 +44,8 @@ footer.main {
    }
    h5 {
       color: #F8EAD3;
-      font: italic 300 18px/1.2em 'Open Sans',sans-serif;
+      font: italic 300 'Open Sans',sans-serif;
+      font-size: rem-calc(17);
       text-shadow: 1px 1px #000000;
    }
    hr {
@@ -116,7 +125,7 @@ $accordion-content-padding: $column-gutter/2;
          border-right: 1px solid #282929;
       }
       dd h5 {
-         padding: 70px 0;
+         padding-top: rem-calc(50);
       }
    }
 }
