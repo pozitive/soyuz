@@ -4,14 +4,20 @@
       %h5
         <strong>Как мы работаем:</strong> 1. Вы звоните нам - 2. Мы организуем забор груза - 3. Мы сообщаем вам о завершении доставки
       %hr
-  %div.row
-    %div.large-6.columns
+  .row
+    .small-12.medium-6.columns
       %p
         SOYUZ © 2008–2013  All rights reserved.
-    %div.large-3.columns
-      %p 
-        = link_to "Sign up", new_user_path
-    %div.large-3.columns
+    .small-12.medium-6.columns
       %ul.inline-list.right
         %li
           %a{href: "http://lianzhong3688.1688.com/"} ALIBABA
+  .row
+    .small-12.columns.hide
+      - if current_user
+        = current_user.email
+        = link_to "Log out", logout_path
+      - else
+        = link_to "Sign up", signup_path 
+        = link_to "Sign in", login_path 
+

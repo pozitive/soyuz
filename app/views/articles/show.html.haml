@@ -1,4 +1,4 @@
-%p#notice= notice
+= notice
 
 %h1
   = @article.name
@@ -6,7 +6,6 @@
 
 = @article.content.html_safe if @article.content.present?
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+= link_to 'Edit', edit_article_path(@article) if current_user
+= link_to 'Back', articles_path if current_user
 

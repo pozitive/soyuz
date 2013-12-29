@@ -1,21 +1,14 @@
 %h1 Listing articles
 
-%table
-  %tr
-    %th Name
-    %th Content
-    %th
-    %th
-    %th
-
-  - @articles.each do |article|
-    %tr
-      %td= article.name
-      %td= article.content
-      %td= link_to 'Show', article
-      %td= link_to 'Edit', edit_article_path(article)
-      %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+- @articles.each do |article|
+  .div
+    %h3= link_to article.name, article_path(article.id)
+    %p= truncate_html(article.content, length: 300, omission: '...(continued)')
+    = link_to 'Show', article if current_user
+    = link_to 'Edit', edit_article_path(article) if current_user
+    = link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } if current_user
+    %hr
 
 %br
 
-= link_to 'New Article', new_article_path
+= link_to 'New Article', new_article_path if current_user

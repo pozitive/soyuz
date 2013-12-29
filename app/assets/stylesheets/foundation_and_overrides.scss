@@ -21,10 +21,10 @@ header.main {
 }
 // Content
 .content {
-   padding: 0 0 50px 0;
    background: #232121;
    .row {
       background: $second-body-bg;
+      padding: 0 0 50px 0;
    }
    h1, h2, h3 {
       color: #F8EAD3;
@@ -32,7 +32,7 @@ header.main {
 }
 .welcome {
    .content {
-      padding: 0;
+      display: none;
    }
 }
 // Footer

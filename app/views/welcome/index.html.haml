@@ -2,8 +2,10 @@
   - if flash[:notice]
     .row
       .large-12.columns
-        .panel.callout.radius
-          %h5= notice
+        %div{:data => {:alert => true}, class: "alert-box success"}
+          = notice
+          %a{ href: "#", class: "close"} &times;
+
   %dl.accordion{:data => {'accordion' => true}} 
     %dd
       %a{id: "delivery-car", href: "#panel1"}
