@@ -1,4 +1,6 @@
 Soyuz::Application.routes.draw do
+  resources :users
+
   get "welcome/index"
   resources :reports
 

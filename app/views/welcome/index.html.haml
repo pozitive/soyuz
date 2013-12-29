@@ -1,4 +1,9 @@
 - content_for :splash do
+  - if flash[:notice]
+    .row
+      .large-12.columns
+        .panel.callout.radius
+          %h5= notice
   %dl.accordion{:data => {'accordion' => true}} 
     %dd
       %a{id: "delivery-car", href: "#panel1"}
