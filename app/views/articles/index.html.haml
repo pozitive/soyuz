@@ -2,7 +2,7 @@
 
 - @articles.each do |article|
   .div
-    %h3= link_to article.name, article_path(article.id)
+    %h3= link_to article.name, article_path(article)
     %p= truncate_html(article.content, length: 300, omission: '...(continued)')
     = link_to 'Show', article if current_user
     = link_to 'Edit', edit_article_path(article) if current_user

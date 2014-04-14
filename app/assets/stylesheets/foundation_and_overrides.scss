@@ -17,8 +17,7 @@ $anchor-font-color-hover: darken($header-font-color, 50%);
 // Top bar
 $topbar-bg: #2F2C2D;
 // Header
-header.main {
-}
+
 // Content
 .content {
    background: #232121;
@@ -100,7 +99,7 @@ $accordion-content-padding: $column-gutter/2;
 }
 @media #{$large-up} {
    nav.top-bar {
-      margin: 66px 0 ;
+      margin: rem-calc(40) 0 rem-calc(60) 0;
    }
    #logo {
       margin-top: -20px;

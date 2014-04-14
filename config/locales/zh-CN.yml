@@ -1,0 +1,35 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+zh-CN:
+  more: 更多 >
+  welcome:
+    auto: 正在处理中
+    autotext: 正在处理中
+    avia: 航空货运
+    aviatext: 目前航空货凭借高速运输在商务中越来越受欢迎。尽管航空货运服务费用较高，但极大的节约了成本。何以这样说？因为根据著名的公式我们知道，时间就是金钱。也就是说越快的完成一批货物的运输，也就越快的完成销售，或者说有更多的时间准备其他货物。同样这也意味着在收回这项服务高昂的成本的同时，在商业（获取利润）过程中获取最终结果的时间极大的缩短了。
+    rail: 铁路货运
+    railtext: 联合公司通过铁路运输货物。这是最传统的也是最可靠地货物运输方式之一。货物遗失或损坏风险低是此类运输最明显的特点，众所周知，铁路运输是最具希望的交通运输之一，它不会被水淹没，不会从天上掉下来，也不会冲出轨道（出现几率极小）。所有类型的货物可通过不同的方式---集装箱，罐体，袋子，箱子等利用铁路运输。 
+    sea: 集装箱海运
+    seatext: 由于近年来出现了与向全球各地供货相关的新的商业活动领域和方向，集装箱海运也就具有了更大的意义，此类运输方式与其他的运输方式相比，具有一系列优势。
+  footer:
+    sloganfirst:  正在处理中
+    slogansecond:  正在处理中

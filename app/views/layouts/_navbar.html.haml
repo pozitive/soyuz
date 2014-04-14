@@ -1,22 +1,27 @@
-%header.main
+%header
   .row
-    %nav.top-bar{data: {topbar: "", options: "is_hover: false"}}
-      %ul.title-area
-        %li.name
-          %h1#logo
-            = link_to "SOYUZ", root_path, class: "mobile"
-            = link_to image_tag("logo.png"), root_path
-        %li.toggle-topbar.menu-icon
-          %a{href: "#"}
-            %span Menu
-      %section{class: "top-bar-section"}
-        %ul{class: "right"}
-          - Article.order(weight: :asc).roots.each do |article|
-            - if article.children.present?
-              %li{class: "has-dropdown"}
-                = link_to article.name, "#", class: "has-dropdown"
-                %ul{class: "dropdown"}
-                  - article.children.order(weight: :asc).each do |children|
-                    %li= link_to children.name, children
-            - else
-              %li= link_to article.name, article
+    .locales.right
+      = link_to image_tag("https://s3-us-west-2.amazonaws.com/soyuzchina/website/flags/Flag_of_Chinese.png", size: "32"), locale: "zh-CN"
+      = link_to image_tag("https://s3-us-west-2.amazonaws.com/soyuzchina/website/flags/Flag_of_the_Russian_Federation.png", size: "32"), locale: "ru"
+  .main
+    .row
+      %nav.top-bar{data: {topbar: "", options: "is_hover: false"}}
+        %ul.title-area
+          %li.name
+            %h1#logo
+              = link_to "SOYUZ", root_path, class: "mobile"
+              = link_to image_tag("logo.png"), root_path
+          %li.toggle-topbar.menu-icon
+            %a{href: "#"}
+              %span Menu
+        %section{class: "top-bar-section"}
+          %ul{class: "right"}
+            - Article.order(weight: :asc).roots.each do |article|
+              - if article.children.present?
+                %li{class: "has-dropdown"}
+                  = link_to article.name, "#", class: "has-dropdown"
+                  %ul{class: "dropdown"}
+                    - article.children.order(weight: :asc).each do |children|
+                      %li= link_to children.name, children
+              - else
+                %li= link_to article.name, article_path(article)
