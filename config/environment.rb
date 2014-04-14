@@ -3,3 +3,6 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
 Soyuz::Application.initialize!
+
+# Config
+APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")

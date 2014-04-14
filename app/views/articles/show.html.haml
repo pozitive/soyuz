@@ -1,3 +1,6 @@
+- title @article.name
+- meta_description @article.summary if @article.summary.present?
+- meta_keywords @article.keyword if @article.keyword.present?
 = notice
 
 %h1

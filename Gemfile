@@ -22,6 +22,7 @@ gem 'truncate_html'
 gem 'ancestry'
 gem 'globalize', '~> 4.0.0.alpha.2'
 gem 'social-share-button'
+gem 'redcarpet'
 
 
 # Use ActiveModel has_secure_password
