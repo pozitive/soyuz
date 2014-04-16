@@ -23,7 +23,9 @@ gem 'ancestry'
 gem 'globalize', '~> 4.0.0.alpha.2'
 gem 'social-share-button'
 gem 'redcarpet'
-
+gem 'capistrano-rbenv'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
