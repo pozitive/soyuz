@@ -1,3 +1,7 @@
+require 'capistrano/rbenv'
+require 'capistrano/bundler'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
@@ -10,6 +14,11 @@ set :application, 'soyuz'
 
 set :repo_url, 'git@github.com:pozitive/soyuz.git'
 
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.1.0'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -60,6 +69,7 @@ namespace :deploy do
     on roles(:app) do
       sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/soyuz"
       sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_soyuz"
+      execute "mkdir -p #{shared_path}/config"
     end
   end
 
