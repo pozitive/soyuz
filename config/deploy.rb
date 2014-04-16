@@ -37,6 +37,11 @@ set :deploy_to, '/home/#{user}/apps/#{application}'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set(:executable_config_files, %w(
+  unicorn_init.sh
+))
+
+
 namespace :deploy do
 
   desc 'Restart application'
