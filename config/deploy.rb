@@ -1,17 +1,21 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-server '109.120.166.43', roles: [:web, :app, :db, :workers]
-
-set :application, 'soyuz'
-set :repo_url, 'git@github.com:pozitive/soyuz.git'
+server '109.120.166.43', roles: [:web, :app, :db, :workers], ssh_options: {
+  user: "deployer",
+  forward_agent: true
+}
 set :user, 'deployer'
+set :application, 'soyuz'
+
+set :repo_url, 'git@github.com:pozitive/soyuz.git'
+
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/#{user}/apps/#{application}'
+set :deploy_to, "/home/deployer/apps/soyuz"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -51,6 +55,14 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
+
+  task :setup_config do
+    on roles(:app) do
+      sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/soyuz"
+      sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_soyuz"
+    end
+  end
+
 
   after :publishing, :restart
 
