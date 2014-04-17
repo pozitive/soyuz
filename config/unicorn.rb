@@ -1,4 +1,4 @@
-root = "/home/deployer/apps/soyuz/current"
+root = "/home/deploy/apps/soyuz/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
