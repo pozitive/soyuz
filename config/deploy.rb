@@ -5,7 +5,7 @@ require 'capistrano/rails/migrations'
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-server 'example.com', roles: [:web, :app, :db, :workers], ssh_options: {
+server '109.120.166.48', roles: [:web, :app, :db, :workers], ssh_options: {
   user: "deploy",
   forward_agent: true
 }
