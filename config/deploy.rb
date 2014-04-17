@@ -70,6 +70,7 @@ namespace :deploy do
     on roles(:app) do
       sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/soyuz"
       sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_soyuz"
+      execute "mkdir -p #{current_path}/tmp/pids"
       execute "mkdir -p #{shared_path}/config"
     end
   end
