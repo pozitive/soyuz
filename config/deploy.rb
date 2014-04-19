@@ -3,7 +3,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.2.0'
 
 server '109.120.166.48', roles: [:web, :app, :db, :workers], ssh_options: {
   user: "deploy",
@@ -76,7 +76,9 @@ namespace :deploy do
   end
 
   task :symlink_config do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    on roles(:app) do
+      execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    end
   end
 
   after :publishing, :restart
