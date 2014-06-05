@@ -1,5 +1,6 @@
 Soyuz::Application.routes.draw do
-  scope "(:locale)", :constraints => {:locale => /#{I18n.available_locales.join("|")}/} do
+
+  scope "(:locale)", :constraints => {:locale => /ru|zh-CN/} do
     get 'signup', to: 'users#new'   ,     as: 'signup'
     get 'login' , to: 'sessions#new',     as: 'login'
     get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -8,7 +9,6 @@ Soyuz::Application.routes.draw do
     resources :users
     resources :reports
     resources :articles
-    get "welcome/index"  
     root to: 'welcome#index'
   end
 
