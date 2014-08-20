@@ -1,3 +1,4 @@
+require 'pry'
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
@@ -5,6 +6,7 @@ require 'capistrano/rails/migrations'
 # config valid only for Capistrano 3.1
 lock '3.2.0'
 
+application = 'soyuz'
 server '109.120.166.48', roles: [:web, :app, :db, :workers], ssh_options: {
   user: "deploy",
   forward_agent: true
@@ -26,9 +28,10 @@ set :rbenv_roles, :all # default value
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, "/home/deploy/apps/soyuz"
+set :deploy_via, :remote_cache
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -55,14 +58,21 @@ set(:executable_config_files, %w(
   unicorn_init.sh
 ))
 
+after "deploy", "deploy:cleanup"
 
 namespace :deploy do
-
-  desc 'Restart application'
-  %w[start stop restart].each do |command|
+  %w[start stop].each do |command|
     desc "#{command} unicorn server"
-    task command, roles: :app, except: {no_release: true} do
-      run "/etc/init.d/unicorn_#{application} #{command}"
+    task command  do
+      on roles(:app) do
+        execute "/etc/init.d/unicorn_#{application} #{command}"
+      end
+    end
+  end
+
+  task :graceful_stop do
+    on roles(:app) do
+      execute "lsof /tmp/unicorn.soyuz.sock | sed -n '2p' | awk '{print $2}' | xargs kill -QUIT"
     end
   end
 
