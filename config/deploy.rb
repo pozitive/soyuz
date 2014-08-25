@@ -95,10 +95,8 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      execute "lsof /tmp/unicorn.soyuz.sock | sed -n '2p' | awk '{print $2}' | xargs kill -QUIT"
+      execute "/etc/init.d/unicorn_#{application} #{command}"
     end
   end
 
