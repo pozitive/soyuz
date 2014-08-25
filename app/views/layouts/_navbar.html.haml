@@ -16,7 +16,7 @@
               %span Menu
         %section{class: "top-bar-section"}
           %ul{class: "right"}
-            - Article.order(weight: :asc).roots.each do |article|
+            - Article.with_translations(locale).order(weight: :asc).roots.each do |article|
               - if article.children.present?
                 %li{class: "has-dropdown"}
                   = link_to article.name, "#", class: "has-dropdown"
